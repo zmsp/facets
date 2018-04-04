@@ -114,7 +114,7 @@
                <div class="facets-ov upload-data-button" id="uploadbutton1"><h4>load your own data</h4></div>
                <div class='facets-ov upload-data-desc'><h6 class='upload'>
                    Load one or more csv files with your first row being the header.
-                   <br/>You could also specify seperator character if the file isn't pipe (|) seperated. </h6>
+                   <br/>You could also specify seperator character if the file isn't comma (,) seperated. </h6>
                </div>
            </div>
        </div>
@@ -225,7 +225,8 @@
       console.error('ERROR: Line ', e.lineno, ' in ', e.filename, ': ', e.message);
     };
     var readFileAsync = function() {
-      fileworker.postMessage(fileupload.files);
+        seperator = $("#seperatorinput1")[0].value || ",";
+      fileworker.postMessage([fileupload.files, seperator]);
     }
     fileupload.addEventListener('change', readFileAsync);
     $.when(trainAjax(), testAjax()).done(function(trainAjax, testAjax) {
@@ -293,6 +294,7 @@
           </div>
 
       </div>
-</div>
+     </div>
+    </div>
   </footer>
 </html>

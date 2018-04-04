@@ -1,4 +1,3 @@
-demo http://zmsp.github.io/facets
- 
+demo http://zprime.tech/facets
 
 original repo https://github.com/PAIR-code/facets

@@ -15,14 +15,12 @@
  * limitations under the License.
  */
 importScripts('https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js');
-var readFiles = function (files,whendone) {
-    debugger
+var readFiles = function (files,whendone, seperator) {
     var count = files.length;
     var datasetsList = [];
     var readFile = function (file) {
         var reader = new FileReaderSync();
         var result=reader.readAsBinaryString(file);
-        var seperator =  $("#seperatorinput1")[0].value || ",";
         var psv = d3.dsvFormat(seperator);
         var parsedData = psv.parse(result);
             parsedData.forEach(function (row) {
@@ -48,8 +46,8 @@ var readFiles = function (files,whendone) {
     }
 }
 self.addEventListener('message', function (e) {
-    var files = e.data;
+    var files = e.data[0];
     readFiles(files, function (datasetsList) { // done
         postMessage(datasetsList);
-    });
+    },  e.data[1]);
 }, false);
