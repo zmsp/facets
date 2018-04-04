@@ -16,12 +16,15 @@
  */
 importScripts('https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js');
 var readFiles = function (files,whendone) {
+    debugger
     var count = files.length;
     var datasetsList = [];
     var readFile = function (file) {
         var reader = new FileReaderSync();
         var result=reader.readAsBinaryString(file);
-        var parsedData = d3.csvParse(result);
+        var seperator =  $("#seperatorinput1")[0].value || ",";
+        var psv = d3.dsvFormat(seperator);
+        var parsedData = psv.parse(result);
             parsedData.forEach(function (row) {
                 parsedData.columns.forEach(function (column) {
                     if (!row[column]) {

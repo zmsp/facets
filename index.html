@@ -65,24 +65,24 @@
           <div class="nav-menu">
 
 <!-- Facets Name -->
-          <div class="facets"><a href="index.html#top"><h3>Facets</h3></a></div>
+          <div class="facets"><a href="index.html#top"><h3>Data Tool</h3></a></div>
 
 <!-- In=page Anchor Links -->
           <div class= "nav-links">
-            <div class="nav-link"><a href="index.html#top">About</a></div>
+
+              <div class="nav-link"><a href="index.html#facets-try">Try It</a></div>
 
             <div class="nav-link"><a href="index.html#facets-overview">Facets Overview</a></div>
 
             <div class="nav-link"><a href="index.html#facets-dive">Facets Dive</a></div>
 
-            <div class="nav-link"><a href="index.html#references">References</a></div>
 
           </div>
 
 <!-- CTA Group -->
           <div class= "cta-group">
-            <a href="https://www.github.com/PAIR-code/facets" target="_blank"><div class="cta" id="cta-1"><h4>Code</h4></div></a>
-            <a href="https://ai.google/pair" target="_blank"><div class="cta" id="cta-2"><h4>PAIR</h4></div></a>
+            <a href="https://github.com/zmsp/facets" target="_blank"><div class="cta" id="cta-1"><h4>Code</h4></div></a>
+            <a href="http://zmsp.github.io/" target="_blank"><div class="cta" id="cta-2"><h4>Blog</h4></div></a>
                 
 
           </div>
@@ -91,31 +91,33 @@
     </div>
   </div>
 
-    <div class="browser_width banner-bw">
-     <div class="banner"><!-- column -->
-     </div>
-
-    </div>
-
-    <div class="title" id="introduction"><h1>Facets - know your data</h1></div>
-
-    <div class="clearfix colelem about">
-
-     <div class="subhead">
-       <h2>Better data leads to better models.</h2>
-     </div>
-
-     <div class="desc-copy">
-      <p>The power of machine learning comes from its ability to learn patterns from large amounts of data. Understanding your data is critical to building a powerful machine learning system.</p><br><p>Facets contains two robust visualizations to aid in understanding and analyzing machine learning datasets. Get a sense of the shape of each feature of your dataset using Facets Overview, or explore individual observations using Facets Dive.</p>
-     </div>
-
-    </div>
-
-    <div class="demo-box">
-      <p class='demo-description'>Explore Facets Overview and Facets Dive on the UCI Census Income dataset, used for predicting whether an individual’s income exceeds $50K/yr based on their census data. The census data contains features such as age, education level and occupation for each individual.<span class="superscript">1</span></p>
-    </div>
 
 
+       <div class="separator" id="facets-try"><!-- separating line --></div>
+
+       <div class="demo-desc-box facets-ov">
+           <div class="facets-ov demo-title-bar">
+               <h5 class="demo-head">Try it out</h5>
+               <div class="demo-line facets-ov" ><!-- simple frame --></div>
+           </div>
+           <div class='demo-desc facets-ov'>
+               <div class="facets-ov demo-copy col1"><!-- content -->
+                   <h6 class='summary'>Facets Overview summarizes statistics for each feature and compares the training and test datasets. It becomes easy to learn the distribution of values across the 6 numeric and 9 categorical features for both datasets.</h6>
+               </div>
+               <div class="demo-copy col2"><!-- content -->
+                   <h6>Use the “Sort by” dropdown to sort features by “Distribution distance”. This sort order brings to the top of the tables, the features that are the most different between the two datasets. “Target” becomes the first feature in the table of categorical features. The chart for this feature shows that the training and test datasets actually use slightly different labels (“&gt;50K” for the training data and “&gt;50K.” for test data - notice the trailing period). This helps us uncover an unexpected difference between the training data and the test data.</h6>
+               </div>
+           </div>
+
+           <div class='facets-ov upload-data'>
+               <input id="seperatorinput1" class="upload-data-input" type="text" id="Textbox" name="Textbox" maxlength="5"  placeholder="Separator"/>
+               <div class="facets-ov upload-data-button" id="uploadbutton1"><h4>load your own data</h4></div>
+               <div class='facets-ov upload-data-desc'><h6 class='upload'>
+                   Load one or more csv files with your first row being the header.
+                   <br/>You could also specify seperator character if the file isn't pipe (|) seperated. </h6>
+               </div>
+           </div>
+       </div>
     <div class="separator" id="facets-overview"><!-- separating line --></div>
 
     <div class="title facets-ov">
@@ -134,24 +136,6 @@
     </div>
 
 
-     <div class="demo-desc-box facets-ov">
-      <div class="facets-ov demo-title-bar">
-        <h5 class="demo-head">Try it out</h5>
-        <div class="demo-line facets-ov" ><!-- simple frame --></div>
-      </div>
-      <div class='demo-desc facets-ov'>
-        <div class="facets-ov demo-copy col1"><!-- content -->
-          <h6 class='summary'>Facets Overview summarizes statistics for each feature and compares the training and test datasets. It becomes easy to learn the distribution of values across the 6 numeric and 9 categorical features for both datasets.</h6>
-        </div>
-        <div class="demo-copy col2"><!-- content -->
-          <h6>Use the “Sort by” dropdown to sort features by “Distribution distance”. This sort order brings to the top of the tables, the features that are the most different between the two datasets. “Target” becomes the first feature in the table of categorical features. The chart for this feature shows that the training and test datasets actually use slightly different labels (“&gt;50K” for the training data and “&gt;50K.” for test data - notice the trailing period). This helps us uncover an unexpected difference between the training data and the test data.</h6>
-        </div>
-      </div>
-      <div class='facets-ov upload-data'>
-        <div class="facets-ov upload-data-button" id="uploadbutton1"><h4>load your own data</h4></div>
-        <div class='facets-ov upload-data-desc'><h6 class='upload'>Load one or more csv files with your first row being the header.</h6></div>
-      </div>
-    </div>
 
  <div class="separator" id="facets-dive"><!-- separating line --></div>
 
@@ -170,7 +154,7 @@
     <div class="facets-dive-demo">
     </div>
 
-     <div class="demo-desc-box facets-dive">
+     <div class="demo-desc-box facets-dive" hidden>
       <div class="facets-dive demo-title-bar">
         <h5 class="demo-head">Try it out</h5>
         <div class="demo-line facets-dive" ><!-- simple frame --></div>
@@ -190,27 +174,7 @@
     </div>
   </div>
   <div class="separator" id="quickdraw"><!-- separating line --></div>
-  <div class= 'facets-dive-quickdraw'>
-    <div class="title facets-quickdraw full-width">
-      <h2>FACETS DIVE x QUICK, DRAW!</h2>
-    </div>
 
-    <div class="subhead facets-quickdraw full-width">
-      <p><a href="https://pair-code.github.io/facets/quickdraw.html" target="_blank">Explore the Quick, Draw! dataset on Dive.</a><span class="superscript">2</span></p>
-    </div>
-    <div class="desc-copy facets-quickdraw"><a href="https://pair-code.github.io/facets/quickdraw.html" target="_blank"><img src="images/FacetsDive_Quickdraw@2x.jpg" alt="Facets Dive x Quickdraw" style="cursor:pointer;"></a></div>
-  </div>
-    <div class="references" id="references">
-      <div class="separator"><!-- separating line --></div>
-      <div class="title facets-references"><h1>References</h1></div>
-        <div class="desc-copy facets-references" ><!-- content -->
-          <p>Lichman, M. (2013). UCI Machine Learning Repository [<a href="http://archive.ics.uci.edu/ml/datasets/Census+Income" target="_blank">http://archive.ics.uci.edu/ml/datasets/Census+Income</a>]. Irvine, CA: University of California, School of Information and Computer Science</p>
-          <br>
-          <p><a href="https://quickdraw.withgoogle.com/data" target="_blank">Quick, Draw! Dataset</a> has been made available by Google, Inc. under the <a href="https://creativecommons.org/licenses/by/4.0/" alt="Creative Commons Attribution 4.0 International license" target="_blank">Creative Commons Attribution 4.0 International license.</a></p>
-        </div>
-    </div>
-
-   </div>
 
   </div>
 
@@ -318,15 +282,14 @@
   <footer>
     <div class="footer browser_width"><!-- group -->
       <div class= "footer-nav-menu">
-        <div class="footer-google-logo">
-        </div>
+
         <div class>
           <div class="footer-pair footer-link">
-           <a href="https://ai.google/pair" target="_blank">People + AI Research Initiative</a>
+           <a href="https://github.com/PAIR-code/facets" target="_blank">Pair-code/facets</a>
           </div>
 
           <div class="footer-source-code footer-link">
-            <a href="https://www.github.com/PAIR-code/facets" target="_blank">Source on Github</a>
+            <a href="https://github.com/zmsp/facets" target="_blank">Code for this project</a>
           </div>
 
       </div>

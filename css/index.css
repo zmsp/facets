@@ -466,6 +466,17 @@ img {
   padding: 12px;
 }
 
+.upload-data-input{
+  border: solid rgba(207, 216, 220,0.6);
+  float:left;
+  margin: auto 10px auto 10px;
+  border-radius: 3px;
+  padding: 10px 5px;
+  text-align: center;
+  cursor: pointer;
+  width: 65px;
+}
+
 .upload{
   color: rgba(0,0,0,0.54);
   font-size: 12px;
